@@ -1,0 +1,252 @@
+:root {
+    --background-color: #F5F5F5;
+    --text-color: #333333;
+    --primary-color: #007AFF;
+    --secondary-color: #E5E5EA;
+    --accent-color: #FF9500;
+    --error-color: #FF3B30;
+    --correct-color: #34C759;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
+}
+
+.container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+h1, h2 {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+#text-display, #error-display {
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+#input-area, #custom-text {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 12px;
+    resize: none;
+    box-sizing: border-box;
+    background-color: white;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    height: 400px; /* 固定高度 */
+    /* 或者 */
+    min-height: 200px; /* 最小高度，允许内容增加时自动增高 */
+    /* 如果想让文本框可以调整大小，可以移除或修改 resize 属性 */
+    resize: vertical; /* 允许垂直调整大小 */
+}
+
+#stats, #result {
+    width: 100%;
+    margin-top: 1rem;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+#stats {
+    display: flex;
+    justify-content: space-around;
+}
+
+#stats p {
+    margin: 0;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+button, select {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+}
+
+button:hover, select:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+button:active, select:active {
+    transform: translateY(0);
+}
+
+#end-btn {
+    background-color: var(--error-color);
+}
+
+#custom-text {
+    margin-top: 1rem;
+}
+
+.correct {
+    color: var(--correct-color);
+}
+
+.error {
+    background-color: var(--error-color);
+    color: white;
+}
+
+.missing {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.extra {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+#result {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 12px;
+    margin-top: 1rem;
+}
+
+select {
+    background-color: white;
+    color: var(--text-color);
+    border: 1px solid var(--secondary-color);
+    margin-top: 1rem;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    #text-display, #error-display, #input-area, #custom-text {
+        font-size: 0.9rem;
+        padding: 0.75rem;
+    }
+
+    button, select {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    #stats {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #stats p {
+        margin: 0.25rem 0;
+    }
+}
+
+.text-display-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#text-display {
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.page-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#prev-page {
+    left: -40px;
+}
+
+#next-page {
+    right: -40px;
+}
+
+.page-button:hover {
+    background-color: var(--accent-color);
+}
+
+.page-button:disabled {
+    background-color: var(--secondary-color);
+    cursor: not-allowed;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英文打字练习</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>托福范文英文打字练习</h1>
+        <div class="text-display-container">
+            <button id="prev-page" class="page-button">&lt;</button>
+            <div id="text-display"></div>
+            <button id="next-page" class="page-button">&gt;</button>
+        </div>
+        <textarea id="input-area" rows="5" placeholder="在此开始输入..."></textarea>
+        <div id="stats">
+            <p>时间: <span id="time">0</span> 秒</p>
+            <p>WPM: <span id="wpm">0</span></p>
+            <p>总词数: <span id="total-words">0</span></p>
+            <p>页数: <span id="current-page">0</span>/<span id="total-pages">0</span></p>
+        </div>
+        <div class="buttons">
+            <button id="start-btn">开始</button>
+            <button id="pause-btn" style="display: none;">暂停</button>
+            <button id="reset-btn">重置</button>
+            <button id="end-btn" style="display: none;">结束</button>
+        </div>
+        <select id="difficulty">
+            <option value="integrated_writing">整合写作 Integrated Writing</option>
+            <option value="academic_discussion">学术讨论 Academic Discussion</option>
+            <option value="custom">自定义</option>
+        </select>
+        <textarea id="custom-text" rows="3" placeholder="在此输入自定义文本..." style="display: none;"></textarea>
+        <div id="result" style="display: none;">
+            <h2>练习报告</h2>
+            <div id="error-display"></div>
+            <p>总用时: <span id="total-time"></span> 秒</p>
+            <p>最终WPM: <span id="final-wpm"></span></p>
+            <p>总错误数: <span id="total-errors"></span></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
